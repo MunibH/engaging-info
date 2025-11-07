@@ -1,0 +1,19 @@
+# this file is located at C:/Users/munib/.ssh/config
+Host flvc3
+  HostName flv-c3.mit.edu
+
+Host flvc1
+  HostName flv-c1.mit.edu
+
+Host flvc2
+  HostName flv-c2.mit.edu
+
+
+Host orcd-login
+  HostName orcd-login001.mit.edu
+  User munib
+
+Host orcd-compute
+  User munib
+  HostName node1601
+  ProxyJump orcd-login
