@@ -1,4 +1,4 @@
-# Logging into Engaging
+# LOGGING INTO ENGAGING
 1. In the terminal:
 	- `ssh orcd-login`
 	- duo push authentication
@@ -27,13 +27,13 @@
 	- `ssh orcd-compute` __OR__
 	- `Connect to remote host` in VS code
 
-# Using python
+# USING PYTHON
 - `module load miniforge`
 - create a conda environment or load one
 
-# Using jupyter notebooks
+# USING JUPYTER NOTEBOOKS
 
-# Data storage
+# DATA STORAGE
 - we have 60TB available at `/orcd/data/flavell/001`
 	- unclear if backed up
 - each user has !TB available at `/orcd/home/002/munib/orcd/pool`
@@ -43,15 +43,18 @@
 - each user's scratch directory at `/orcd/home/002/munib/orcd/pool` has 1TB
 	- not backed up
 - check how much available storage in a directory `df -h /orcd/data/flavell/001`
+-  TODO: add info about flv store 1 here
 
-# File transfer
+# FILE TRANSFER
 The most recommended method to transfer data is Globus because it is safe and efficient. You can do all operations on a web browser on your computer. Refer to [Globus user guide](https://docs.globus.org/guides/tutorials/manage-files/transfer-files/) for details. Use the endpoint mithpc#openmind for OpenMind and use the collection MIT ORCD Home Collection for Engaging. (Might also be MIT Engaging Collection)
 
 You can also consider using `rclone` to transfer data. Refer to the `rclone` section on [this page](https://github.mit.edu/MGHPCC/OpenMind/wiki/How-to-transfer-files%3F).
 
 It is less recommended to use `rsync` to transfer data because the transfer speed is relatively slow. If you want to use rsync for some reason, refer to [this page for details](https://github.mit.edu/MGHPCC/OpenMind/wiki/Use-rsync-to-transfer-files-between-OpenMind-and-Engaging).
 
-# Git and github
+Can also just use filezilla
+
+# GIT AND GITHUB
 1. [Follow these instructions to make an SSH key](https://orcd-docs.mit.edu/faqs/#how-do-i-use-git-on-the-cluster)
 2. Initialize a git repo:
 	- `git init`
@@ -61,6 +64,25 @@ It is less recommended to use `rsync` to transfer data because the transfer spee
 	- `ssh -T git@github.com`
 	- Should say __successfully__ __authenticated__
 5. Can you now stage, commit, and push
+
+# SHELL ALIASES
+
+## My aliases
+  - `cdout`: cd to OUPUT DIRECTORY	
+  - `cdg5code`: cd to g5ht-pipeline code directory
+  - `cdg5data`: cd to g5ht data directory 
+  - `sqme`: check job status (alias for `squeue --me`)
+  - `sa1`: allocate ou_bcs_normal for 1hr (also have `sa2`, `sa3`, `sa4`)
+
+### Make a new one
+- open bashrc
+  - `nano ~/.bashrc`
+  - add alias, for example:
+    - `alias cdout='cd /home/user/my_project/output'`
+  - save .bashrc
+    - `Ctrl+O`, `Enter`, `Ctrl+X`
+  - `source ~/.bashrc`
+
 
 # OTHER
 - max jobs you can submit on Engaging is 500
