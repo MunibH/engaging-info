@@ -1,6 +1,7 @@
 # LOGGING INTO ENGAGING
 1. In the terminal:
 	- `ssh orcd-login`
+		- if you haven't already, you can [set up an ssh key](https://code.visualstudio.com/docs/remote/troubleshooting#_configuring-key-based-authentication) so that you don't have to enter password each time
 	- duo push authentication
 	- `orcd-login` is an alias for the `orcd-login001` hostname I set in my ssh config file (`C:\Users\munib\.ssh\.config)
 	- in `settings.json` file, you can specify that the login node is linux so you don't have to specify it each time (`C:\Users\munib\AppData\Roaming\Code\User\settings.json)
