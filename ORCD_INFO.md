@@ -74,6 +74,10 @@ Can also just use filezilla
   - `cdg5data`: cd to g5ht data directory 
   - `sqme`: check job status (alias for `squeue --me`)
   - `sa1`: allocate ou_bcs_normal for 1hr (also have `sa2`, `sa3`, `sa4`)
+  - `sjout` and `sjerr`: prints tail of output and error files, respectively. usage `sjout <jobid>`
+    - alias sjout='f(){ scontrol show job "$1" | awk -F= "/StdOut=/{print \$2}" | xargs tail -f; }; f'
+    - alias sjerr='f(){ scontrol show job "$1" | awk -F= "/StdErr=/{print \$2}" | xargs tail -f; }; f'
+
 
 ### Make a new one
 - open bashrc
