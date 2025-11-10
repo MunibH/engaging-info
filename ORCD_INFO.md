@@ -66,6 +66,12 @@ Can also just use filezilla
 	- Should say __successfully__ __authenticated__
 5. Can you now stage, commit, and push
 
+### Merge new code from a different branch
+- `git checkout <branch>` (if not already on desired branch)
+- `git fetch origin` (fetches all branches)
+- `git merge origin/homepc`
+- `git push origin <branch>`
+
 # SHELL ALIASES
 
 ## My aliases
