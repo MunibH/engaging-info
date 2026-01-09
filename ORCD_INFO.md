@@ -66,6 +66,24 @@ Can also just use filezilla
 	- Should say __successfully__ __authenticated__
 5. Can you now stage, commit, and push
 
+### Get code from another branch
+Let's say you want to get code from `main` into `homepc`
+1. handle uncommitted changes on `homepc` branch
+   1. `git add .` -> `git commit -m "msg"` -> `git push -u origin homepc`
+2. then, fetch from github
+   1. `git fetch origin --prune`
+3. make sure local `main` matches github's `main`
+   1. `git switch main`
+   2. `git pull --ff-only origin main`
+4. update local `homepc` branch from github
+   1. `git switch homepc`
+   2. `git pull --ff-only origin homepc`
+5. merge and commit (make sure you're on `homepc` branch)
+   1. `git merge main`
+   2. `git add .` -> `git commit -m "msg"` -> `git push -u origin homepc`
+
+
+
 # SHELL ALIASES
 
 ## My aliases
