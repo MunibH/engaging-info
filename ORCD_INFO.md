@@ -27,6 +27,8 @@
 3. ssh into compute node in VS code (terminal will automatically switch from login to compute if you set `ProxyJump` to `orcd-login` (or whatever the login node `HostName` is set to in your ssh config file).
 	- `ssh orcd-compute` __OR__
 	- `Connect to remote host` in VS code
+    	- `ctrl+shift+p` -> `ssh: connect to host` -> `configure ssh host`
+    	- enter login node for `orcd-compute`
 
 # USING PYTHON
 - `module load miniforge`
@@ -49,11 +51,15 @@
 # FILE TRANSFER
 The most recommended method to transfer data is Globus because it is safe and efficient. You can do all operations on a web browser on your computer. Refer to [Globus user guide](https://docs.globus.org/guides/tutorials/manage-files/transfer-files/) for details. Use the endpoint mithpc#openmind for OpenMind and use the collection MIT ORCD Home Collection for Engaging. (Might also be MIT Engaging Collection)
 
+Can also just use filezilla, never had a problem
+
+### scp from engaging to local pc/ssd
+(base) PS D:\DATA\g5ht-free\20260123> scp munib@orcd-login001.mit.edu:/orcd/data/flavell/001/g5ht/DATA/20260123/date-20260123_strain-ISg5HT-nsIS180_condition-fedpatch_worm005.nd2 "D:\DATA\g5ht-free\20260123\date-20260123_strain-ISg5HT-nsIS180_condition-fedpatch_worm005.nd2"
+
+### for openmind
 You can also consider using `rclone` to transfer data. Refer to the `rclone` section on [this page](https://github.mit.edu/MGHPCC/OpenMind/wiki/How-to-transfer-files%3F).
 
 It is less recommended to use `rsync` to transfer data because the transfer speed is relatively slow. If you want to use rsync for some reason, refer to [this page for details](https://github.mit.edu/MGHPCC/OpenMind/wiki/Use-rsync-to-transfer-files-between-OpenMind-and-Engaging).
-
-Can also just use filezilla
 
 # GIT AND GITHUB
 1. [Follow these instructions to make an SSH key](https://orcd-docs.mit.edu/faqs/#how-do-i-use-git-on-the-cluster)
