@@ -11,7 +11,6 @@
 		- `mit_quicktest` for short batch jobs and interactive jobs that only need a cpu
 		- `mit_normal_gpu` for batch and interactive jobs that need a gpu
 		- Flavell lab has access to `bcs` partitions. [see here for resources](https://github.mit.edu/MGHPCC/OpenMind/wiki/User-guide-for-BCS-computing-resources-on-Engaging#bcs-compute-nodes)
-			- d
 	- Requesting a single core for an interactive job for 1 hour
 		- `salloc -t 01:00:00 -p mit_normal`
 	- Check current job status with `squeue --me`
@@ -53,20 +52,11 @@ The most recommended method to transfer data is Globus because it is safe and ef
 
 Can also just use filezilla, never had a problem
 
+### scp from engaging to local pc/ssd
+
 (On local PC)
 
-__From engaging to flvc__:
-
-`scp munib@orcd-login001.mit.edu:/orcd/data/flavell/001/data/test.tif munib@flv-c3:/home/munib/`
-
-__From engaging to local__:
-
-`scp munib@orcd-login001.mit.edu:/orcd/data/flavell/001/data/test.tif "C:\Users\munib\POSTDOC\DATA"`
-
-
-
-### scp from engaging to local pc/ssd
-(base) PS D:\DATA\g5ht-free\20260123> scp munib@orcd-login001.mit.edu:/orcd/data/flavell/001/g5ht/DATA/20260123/date-20260123_strain-ISg5HT-nsIS180_condition-fedpatch_worm005.nd2 "D:\DATA\g5ht-free\20260123\date-20260123_strain-ISg5HT-nsIS180_condition-fedpatch_worm005.nd2"
+`scp munib@orcd-login001.mit.edu:/orcd/data/flavell/001/g5ht/DATA/20260123/date-20260123_strain-ISg5HT-nsIS180_condition-fedpatch_worm005.nd2 "D:\DATA\g5ht-free\20260123\date-20260123_strain-ISg5HT-nsIS180_condition-fedpatch_worm005.nd2"`
 
 ### for openmind
 You can also consider using `rclone` to transfer data. Refer to the `rclone` section on [this page](https://github.mit.edu/MGHPCC/OpenMind/wiki/How-to-transfer-files%3F).
@@ -99,7 +89,6 @@ Let's say you want to get code from `main` into `homepc`
 5. merge and commit (make sure you're on `homepc` branch)
    1. `git merge main`
    2. `git add .` -> `git commit -m "msg"` -> `git push -u origin homepc`
-
 
 # SHELL ALIASES
 
